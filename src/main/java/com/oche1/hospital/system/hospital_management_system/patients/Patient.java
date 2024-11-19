@@ -1,21 +1,21 @@
 package com.oche1.hospital.system.hospital_management_system.patients;
 
+import com.oche1.hospital.system.hospital_management_system.medicalrecords.MedicalRecord;
 import jakarta.annotation.Generated;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-@Table(name = "patients")
+@Table(name="patients")
 public class Patient {
 
     protected Patient(){
 
     }
-
+    @OneToMany(mappedBy = "patient")
+    private List<MedicalRecord> medicalRecords;
     @Id
     @GeneratedValue
     private Long id;                // Unique identifier for the patient

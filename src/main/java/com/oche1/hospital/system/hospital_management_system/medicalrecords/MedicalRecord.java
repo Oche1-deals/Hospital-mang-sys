@@ -1,9 +1,7 @@
 package com.oche1.hospital.system.hospital_management_system.medicalrecords;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.oche1.hospital.system.hospital_management_system.patients.Patient;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,10 +9,17 @@ import java.time.LocalDate;
 
 @Entity
 public class MedicalRecord {
+        protected MedicalRecord(){
+
+        }
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+
+        @ManyToOne
+        @JoinColumn(name = "patient_ids", referencedColumnName = "id")
+        private Patient patient;
 
         @NotNull(message = "Patient ID is required")
         private Long patientId;

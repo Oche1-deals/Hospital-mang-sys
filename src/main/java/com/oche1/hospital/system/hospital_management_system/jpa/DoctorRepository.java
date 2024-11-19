@@ -6,9 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
-    public default List<Doctor> getDoctorsBySpecialization(String specialization) {
-        return findBySpecialization(specialization);
-    }
-
+    // Custom query methods can be added here
     List<Doctor> findBySpecialization(String specialization);
+
+    List<Doctor> getDoctorsBySpecialization(String specialization);
 }
