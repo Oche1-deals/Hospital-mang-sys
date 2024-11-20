@@ -1,4 +1,4 @@
-package com.oche1.hospital.system.hospital_management_system.patients.exception;
+package com.oche1.hospital.system.hospital_management_system;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
