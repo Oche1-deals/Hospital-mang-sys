@@ -2,10 +2,12 @@ package com.oche1.hospital.system.hospital_management_system.staff;
 
 import com.oche1.hospital.system.hospital_management_system.jpa.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class StaffService {
     @Autowired
     private StaffRepository staffRepository;

@@ -13,6 +13,10 @@ public class NotificationService {
     @Autowired
     private NotificationRepository notificationRepository;
 
+    public NotificationService(NotificationRepository notificationRepository) {
+        this.notificationRepository = notificationRepository;
+    }
+
     public List<NotificationDTO> getAllNotifications() {
         List<Notification> notifications = notificationRepository.findAll();
         return notifications.stream().map(this::convertToDTO).collect(Collectors.toList());

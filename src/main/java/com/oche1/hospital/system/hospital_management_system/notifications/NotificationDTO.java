@@ -9,11 +9,9 @@ public class NotificationDTO {
     private String type;
     private LocalDateTime timestamp;
 
-    public NotificationDTO(Long id, String recipient, String message,
-                           String type, LocalDateTime timestamp) {
-    }
 
-    public void NotificationDTO(Long id, String recipient, String message,
+
+    public  NotificationDTO(Long id, String recipient, String message,
                                 String type, LocalDateTime timestamp) {
         this.id = id;
         this.recipient = recipient;
